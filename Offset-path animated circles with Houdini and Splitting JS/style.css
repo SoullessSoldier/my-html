@@ -1,0 +1,73 @@
+section {
+	box-sizing: border-box;
+}
+
+body {
+	min-height: 100vh;
+	background-color: #1a1c21;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 6rem 2rem;
+}
+header{
+	box-sizing:content-box;
+	display: block;
+	text-align: left;
+	padding: 0;
+	background-color:white;
+}
+.path {
+	width: 451px;
+	height: 451px;
+	position: relative;
+}
+
+.item {
+	--c: calc(1 / var(--item-total) * 100);
+	--color: #fff7bf;
+	--duration: 3000ms;
+	--mask: repeating-conic-gradient(
+		white,
+		white calc(30deg - var(--grad)),
+		transparent calc(30deg - var(--grad)),
+		transparent 30deg
+	);
+	width: 5rem;
+	height: 5rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border-style: solid;
+	border-color: var(--color);
+	border-width: 0.25rem;
+	border-radius: 50%;
+	offset-path: path('M225.5.5c124.3 0 225 100.7 225 225s-100.7 225-225 225S.5 349.8.5 225.5 101.2.5 225.5.5');
+	offset-distance: calc(var(--item-index) * (var(--c) * 1%));
+	opacity: 0;
+	transform: scale(0.1);
+	animation: scaleAndFade var(--duration) infinite calc(var(--item-index) * (var(--duration) / var(--item-total)));
+	-webkit-mask-image: var(--mask);
+	mask-image: var(--mask);
+}
+
+@keyframes scaleAndFade {
+	25% {
+		--grad: 0deg;
+		opacity: 1;
+		border-color: #fff7bf;
+	}
+	40% {
+		border-color: #87ed91;
+	}
+	45% {
+		border-color: #87ed91;
+	}
+	100% {
+		--grad: 20deg;
+		border-width: 0.125rem;
+		border-color: blue;
+		opacity: 0;
+		transform: scale(2);
+	}
+}

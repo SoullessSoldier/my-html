@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Offset-path animated circles with Houdini and Splitting JS</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting.css" />
+<link rel="stylesheet" href="https://unpkg.com/splitting/dist/splitting-cells.css" />
+
+</head>
+<body>
+	<header>
+	Author: Odinokun, link 
+	<a href='https://codepen.io/Odinokun/pen/LYVaNWB'>https://codepen.io/Odinokun/pen/LYVaNWB</a>
+    </header>
+    <section>
+	<div class="path" data-splitting>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+	</section>
+<script src='https://unpkg.com/splitting@1.0.6/dist/splitting.min.js'></script>
+<script id="rendered-js">
+Splitting({
+  by: 'items',
+  matching: '.item' });
+
+
+CSS.registerProperty({
+  name: '--grad',
+  syntax: '<angle>',
+  inherits: true,
+  initialValue: '0deg' });
+
+</script>
+</body>
+</html>
