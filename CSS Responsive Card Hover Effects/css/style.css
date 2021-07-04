@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #16384c;
+    overflow-y: scroll;
+}
+.container2{
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.my-card{
+    position: relative;
+    width: 300px;
+    height: 215px;
+    background: #fff;
+    margin: 15px 15px;
+    padding: 10px 15px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease-in;
+}
+
+.my-card_wrapper{
+    position: relative;
+    
+    
+}
+.my-card_logo{
+    z-index: 9;
+    width: 100%;
+    position: absolute;
+    /*background:  url(./img/hp1536.jpg) no-repeat center /contain ;*/
+    background: #fff;
+    height: 200px;
+    transition: all 0.3s ease-in;
+    max-width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.my-card_favorite{
+    position: absolute;
+    font-size: 40px;
+    top: 5%;
+    left: 85%;
+    z-index: 110;
+    color: #fff;
+    font-weight: 700;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+.favorite-marked{
+    color: yellow;
+}
+.my-card_description{
+    margin: auto;
+    padding: 5px;
+    z-index: 10;
+    position: absolute;
+    width: 96%;
+    background: #fff;
+    border: 2px double black;
+    border-radius: 4px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(0);
+    transition: opacity transform 0.5s ease-in;;
+}
+.my-card_toner-volume{
+    height: 100px;
+    width: 100%;
+    background-color: cornsilk;
+}
+.my-card_controls{
+    margin: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.my-card_logo_model-name{
+    line-height: 380px;
+    vertical-align: 100%;
+    text-align: center;
+    z-index: 100;
+    color: yellow;
+    font-weight: 700;
+}
+.my-card_wrapper:hover .my-card_logo{
+    
+    transform:translateY(-60px) scale(0.8);
+    transition: transform 0.3s ease-in;
+}
+.my-card_wrapper:hover .my-card_description{
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(120px);
+    transition: opacity transform 0.5s ease-in;
+    
+}
+
+.my-card_description-block{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+}
+.my-card_description_title{
+    font-size: 0.8em;
+    font-weight: 700;
+}
+.my-card_description_info{
+    margin-left: 10px;
+}
+
+.my-card_toner-block-title{
+    margin-top: 10px;
+}
+.my-card_toner-block{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center; 
+    align-items: baseline;
+}
+
+.my-card_toner_unit{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 10px;
+}
+.my-card_toner_bar{
+    position: relative;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+}
+.my-card_toner_volume{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+}
+
+.toner_cyan{
+    background-color: cyan;
+    width: 46%;
+}
+.toner_magenta{
+    background-color: magenta;
+    width: 53%;
+}
+.toner_yellow{
+    background-color: yellow;
+    width: 40%;
+}
+.toner_black{
+    background-color: black;
+    width: 76%;
+}
+.toner_drum{
+    background-color: grey;
+}
+
+
+
+.model-hp1536{
+    background: 
+        linear-gradient(0deg, rgba(0,0,0,0.9) 5%, rgba(19,19,19,0) 15%),
+            url(../img/hp1536.jpg) no-repeat center /contain, rgb(255,255,255); 
+        
+}
+.model-xerox3225{
+    background: 
+        linear-gradient(0deg, rgba(0,0,0,0.9) 5%, rgba(19,19,19,0) 15%),
+            url(../img/xerox3225.jpg) no-repeat center /contain, rgb(255,255,255);
+}
+.model-xerox_b405{
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 5%, rgba(19,19,19,0) 15%),
+        url(../img/xerox_b405.jpg) no-repeat center /contain, rgb(255,255,255);
+}
+.model-hp426{
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 5%, rgba(19,19,19,0) 15%),
+        url(../img/hp426.jpg) no-repeat center /contain, rgb(255,255,255);
+}
+.model-xerox3220{
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 5%, rgba(19,19,19,0) 15%),
+        url(../img/xerox3220.jpg) no-repeat center /contain, rgb(255,255,255);
+    
+}
+.model-hp227{
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 5%, rgba(19,19,19,0) 15%),
+        url(../img/hp227.png) no-repeat center /contain, rgb(255,255,255);
+    
+}
+.model-hp451{
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 5%, rgba(19,19,19,0) 15%),
+        url(../img/hp451.jpg) no-repeat center /contain, rgb(255,255,255);
+    
+}
+.model-hp225{
+    background: linear-gradient(0deg, rgba(0,0,0,0.9) 5%, rgba(19,19,19,0) 15%),
+        url(../img/hp225.jpg) no-repeat center /contain, rgb(255,255,255);
+    
+}
