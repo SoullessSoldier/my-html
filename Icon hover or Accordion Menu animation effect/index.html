@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML CSS Icon Hover or Accordion Menu animation effect</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <ul class="mot">
+            <li>
+                <i class="fa fa-subway"></i>
+                <span>Subway/Train</span>
+            </li>
+            <li>
+                <i class="fa fa-bus"></i>
+                <span>Bus</span>
+            </li>
+            <li>
+                <i class="fa fa-car"></i>
+                <span>Car</span>
+            </li>
+            <li>
+                <i class="fa fa-motorcycle"></i>
+                <span>Bike</span>
+            </li>
+            <li>
+                <i class="fa fa-bicycle"></i>
+                <span>Bicycle</span>
+            </li>
+        </ul>
+    </div>
+    <script>
+        
+        (function(){
+            const motLiSpanItems = document.querySelectorAll('.mot li span');
+            const motLiItems = document.querySelectorAll('.mot li');
+            motLiSpanItems.forEach(item => {
+                console.dir(item);
+                item.dataset.width = Math.round(item.offsetWidth);
+                item.style.width = "0px";
+                
+            })
+            motLiItems.forEach(item => {
+                const span = item.querySelector('span');
+                item.addEventListener('mouseenter', (e)=>{
+                    span.style.width = +span.dataset.width + 5 + "px"; 
+                });
+                item.addEventListener('mouseleave', (e)=>{
+                    span.style.width = "0px"; 
+                });
+            })
+        }());
+        
+        
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu with tabs</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="tab">
+        <ul class="tab-items">
+            <li class="tab-item">
+                <a href="#" class="item-link">
+                    <i class="fa fa-home">Home</i>
+                </a>
+            </li>
+            <li class="tab-item">
+                <a href="#" class="item-link">
+                    About
+                </a>
+            </li>
+            <li class="tab-item">
+                <a href="#" class="item-link">
+                    Blog
+                </a>
+            </li>
+            <li class="tab-item">
+                <a href="#" class="item-link">
+                    Community
+                </a>
+            </li>
+            <li class="tab-item different">
+                <a href="#" class="item-link">
+                    <i class="fa fa-user">Login</i>
+                </a>
+            </li>
+            <div class="tab-indicator"></div>
+        </ul>
+    </div>
+    <script>
+        const select = link => {
+            const item = link.parentNode;
+            const tabs = item.parentNode;
+            const index = Array.prototype.indexOf.call(tabs.children, item);
+            const items = tabs.querySelectorAll('.tab-item');
+            
+
+            tabs.style.setProperty('--index', index + 1);
+            items.forEach(item => item.classList.remove('active'));
+            item.classList.add('active');
+            
+        }
+        const tab = document.querySelector('.tab');
+        const itemLinks = tab.querySelectorAll('.item-link');
+        
+        itemLinks.forEach(item=>
+            item.addEventListener('click', (e)=>{select(e.target)})
+        );
+    </script>
+</body>
+</html>
