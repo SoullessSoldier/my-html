@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- Original: https://youtu.be/rBPuFU8mm78 -->
     <div class="container">
         <ul class="mot">
             <li>
@@ -39,7 +40,6 @@
             const motLiSpanItems = document.querySelectorAll('.mot li span');
             const motLiItems = document.querySelectorAll('.mot li');
             motLiSpanItems.forEach(item => {
-                console.dir(item);
                 item.dataset.width = Math.round(item.offsetWidth);
                 item.style.width = "0px";
                 
