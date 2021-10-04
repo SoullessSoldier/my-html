@@ -1,0 +1,110 @@
+html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100%;
+}
+body{
+    font-family: monospace;
+    height: 100%;
+    overflow: hidden;
+    background: #abe9cd linear-gradient(315deg, #abe9cd 0%, #3eadcf 74%);
+    
+}
+header{
+    display: inline-block;
+    background-color: #fff;
+}
+.wrapper{
+    background-color: #333;
+    display: block;
+    min-width: 300px;
+    max-width: 500px;
+    margin: 0 auto;
+    border-radius: 3px;
+    position: relative;
+    inset: 40% 0 0 0;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    transform: scale(1.5);
+}
+.wrapper ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+}
+.wrapper ul li{
+    padding: 1em;
+    color: #fff;
+    height: 50px;
+    width: 50px;
+}
+.wrapper .item{
+    position: relative;
+    top: 10px;
+}
+.wrapper .item *{
+    position: absolute;
+    line-height: 1;
+}
+.wrapper .item input{
+    opacity: 0;
+    height: 60px;
+    width: 60px;
+    transform: translate(-35%, -35%);
+}
+.wrapper input + label{
+    font-size: 1.5em;
+    z-index: 2;
+}
+.wrapper input:checked + label > i{
+    inset: 0 0 0 0;
+}
+.wrapper input:checked{
+    border-radius: 100px;
+}
+.wrapper input:checked + label{
+    color: #fff;
+}
+.wrapper input + label::after{
+    content: "";
+    position: absolute;
+    inset: -12px 0 0 -13px;
+    z-index: -1;
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+    transform: scale(0);    
+}
+.wrapper input:checked + label::after{
+    transform: scale(1.4);
+}
+.wrapper input ~ .floater{
+    display: block;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    inset: 0 0 0 0;
+    background-color: #333;
+    border-radius: 3em 3em 0 0;
+    z-index: -3;
+}
+.wrapper input:checked ~ .floater{
+    transform: scale(2) translate(-5px, -5px);
+}
+.wrapper input#a:is(:checked) + label::after{
+    background-color: crimson;
+}
+.wrapper input#b:is(:checked) + label::after{
+    background-color: cornflowerblue;
+}
+.wrapper input#c:is(:checked) + label::after{
+    background-color: yellowgreen;
+}
+.wrapper input#d:is(:checked) + label::after{
+    background-color: sandybrown;
+}
+:is(input, input:checked) ~ .floater{
+    transition: transform 0.3s cubic-bezier(0.54, -0.18, 0.46, 1.44);
+}
