@@ -1,0 +1,19 @@
+.stat{
+    background-color: #2F2F2F;
+    padding-top: 180px;
+    padding-bottom: 200px;
+    color:#fff;
+
+}
+.stat i{
+    font-size: 80px;
+}
+.stat-items h2{
+    font-weight: bolder;
+    font-size: 42px;
+    color: deepskyblue;
+}
+.stat p{
+    font-weight: 700;
+    letter-spacing: 1px;
+}
