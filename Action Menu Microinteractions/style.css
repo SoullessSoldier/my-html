@@ -23,11 +23,12 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background-color: #222327;
+    
+    
+}
+.header{
+    display: inline-block;    
+    background-color: #fff;
 }
 .wrapper{
     display: flex;
@@ -35,6 +36,8 @@ body{
     align-items: center;
     justify-content: center;
     gap: 10px;
+    min-height: 97vh;
+    background-color: #222327;
 }
 .list{
     display: flex;
