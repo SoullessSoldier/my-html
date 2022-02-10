@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 98vh;
+    background-color: #10131c;
+}
+.navigation{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #212532;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.5s;
+    transition-delay: 0.8s;
+}
+
+.navigation.active{
+    width: 200px;
+    height: 200px;
+    transition-delay: 0.8s;
+}
+
+.navigation span{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50%;
+    transform: translate(calc(12px * var(--x)), calc(12px * var(--y)));
+    transition: transform 0.5s, 
+                width 0.5s, 
+                height 0.5s,
+                background-color 0.5s;
+    transition-delay: calc(0.1s * var(--i));
+}
+.navigation.active span{
+    width: 45px;
+    height: 45px;
+    background-color: #333849;
+    transform: translate(calc(60px * var(--x)), calc(60px * var(--y)));
+}
+.navigation span i{
+    transition: font 0.5s, color 0.5s, opacity 0.5s;
+    transition-delay: 0.5s;
+    transition-timing-function: ease-in-out;
+    font-size: 0em;
+    opacity: 0;
+}
+.navigation.active span i{
+    font-size: 1.35em;
+    color: #fff;
+    /*transition: font 0.5s, color 0.5s, opacity 0.5s;
+    transition-delay: 0.5s;*/
+    opacity: 1;
+    /*animation: size 0.5s;*/
+}
+.navigation.active span:hover i{
+    color: #2dfc52;
+    filter: drop-shadow(0 0 2px #2dfc52) drop-shadow(0 0 15px #2dfc52)
+}
+
+@keyframes size {
+    from {
+      font-size:0em;      
+    }
+  
+    to {
+      font-size:1.35em;      
+    }
+  }
