@@ -1,0 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(galaxy-1920_1080.png);
+    background-repeat: no-repeat;
+    /*background-size: cover;*/
+    font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul li{
+    float: left;    
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    background-color: #000;
+    opacity: 0.8;
+}
+ul li:not(:last-child){
+    margin-right: 2px;
+}
+
+ul li a{
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+ul li a:hover{
+    background-color: green;
+    cursor: pointer;
+}
+
+ul li ul li{
+    display: none;
+}
+
+ul li:hover ul li{
+    display: block;
+}
