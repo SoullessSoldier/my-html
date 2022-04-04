@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="https://youtu.be/yXFiTDfhSXo" id="">Amazing Working Analog and Digital Clock Design using Html CSS & Javascript @ Online Tutorials</a>
+    </header>
+    <section class="section">
+        <div class="container">
+            <div class="clock">
+                <div class="circle" id="second" style="--clr:#04fc43"><i></i></div>
+                <div class="circle circle2" id="minute" style="--clr:#fee800"><i></i></div>
+                <div class="circle circle3" id="hour" style="--clr:#ff2972"><i></i></div>
+
+                <span style="--i:1;"><b>1</b></span>
+                <span style="--i:2;"><b>2</b></span>
+                <span style="--i:3;"><b>3</b></span>
+                <span style="--i:4;"><b>4</b></span>
+                <span style="--i:5;"><b>5</b></span>
+                <span style="--i:6;"><b>6</b></span>
+                <span style="--i:7;"><b>7</b></span>
+                <span style="--i:8;"><b>8</b></span>
+                <span style="--i:9;"><b>9</b></span>
+                <span style="--i:10;"><b>10</b></span>
+                <span style="--i:11;"><b>11</b></span>
+                <span style="--i:12;"><b>12</b></span>
+            </div>
+            <div id="time">
+                <div id="hours" style="--clr:#ff2972">00</div>
+                <div id="minutes" style="--clr:#fee800">00</div>
+                <div id="seconds" style="--clr:#04fc43">00</div>
+                <div id="ampm">AM</div>
+
+            </div>
+        </div>
+    </section>
+    <script>
+        const hour = document.querySelector('#hour'),
+            minute = document.querySelector('#minute'),
+            second = document.querySelector('#second');
+
+        const hours = document.querySelector('#hours'),
+            minutes = document.querySelector('#minutes'),
+            seconds = document.querySelector('#seconds'),
+            ampm = document.querySelector('#ampm');
+        
+        let control = setInterval(()=>{
+            let day = new Date();
+            let h = day.getHours(), hh = h * 30;
+            let m = day.getMinutes(), mn = m * 6;
+            let s = day.getSeconds(), ss = s * 6;
+            let am = h >= 12 ? 'PM' : 'AM';    
+
+
+            hour.style.transform = `rotateZ(${hh+(mn/12)}deg)`;
+            minute.style.transform = `rotateZ(${mn}deg)`;
+            second.style.transform = `rotateZ(${ss}deg)`;
+
+            hours.textContent = h.toString().padStart(2,'0');
+            minutes.textContent = m.toString().padStart(2,'0');
+            seconds.textContent = s.toString().padStart(2,'0');
+            ampm.textContent = am;
+            }, 1000);
+
+        
+        
+        
+
+
+    </script>
+</body>
+</html>
