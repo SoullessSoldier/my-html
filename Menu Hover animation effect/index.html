@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latest CSS HTML Menu Hover animation effect - HTML CSS JS Menu Hover</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <ul class="parent">
+            <li class="item">Home</li>
+            <li class="item">About</li>
+            <li class="item">Services</li>
+            <li class="item">Gallery</li>
+            <li class="item">Our team</li>
+            <li class="item">Contact</li>
+        </ul>
+    </header>
+    <main class="main">
+        <a href="https://youtu.be/yMiIj54Yue8" id="">Latest CSS HTML Menu Hover animation effect - HTML CSS JQuery Menu Hover @ Online web ustaad</a>
+    </main>
+    <script src="../cdn/js/jquery-3.6.0.min.js"></script>
+    <script src="../cdn/js/navimation.js"></script>
+    <script>
+        $(document).ready(function(){
+            navimation({
+                parent: $("ul"),
+                item: $("li"),
+                event: "mouseenter",
+                navimationTag: {
+                    background: "unset",
+                    id: "navimation",
+                    height: "6px",
+                    timeTranslate: "0.3s",
+                    timeFunctionHide: "linear",
+                    css: {
+                        "background-image": "linear-gradient(90deg, rgba(36, 0, 0, 0) 0%, rgb(32, 199, 83) 30%, rgb(32, 199, 83) 70%, rgba(255, 0, 0, 0) 100%)",
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
