@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sliding Menu Hover animation effect</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <ul class="nav">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Our team</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact</a></li>
+            <li class="slide1"></li>
+            <li class="slide2"></li>
+        </ul>
+    </header>
+    <main class="main">
+        <h1>
+            Sliding Menu Hover animation effect using HTML CSS JS only @ <a href="https://youtu.be/p_gsUxCC_L0">Online web ustaad</a>            
+        </h1>
+        <h2>Origin JQuery code from here - <a href="https://www.jqueryscript.net/menu/sliding-active-nav-item-indicator.html">https://www.jqueryscript.net/menu/sliding-active-nav-item-indicator.html</a></h2>
+    </main>
+    <script src="../cdn/js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(".nav a").on("click", function(){
+            let position = $(this).parent().position();
+            let width = $(this).parent().width();
+            $(".nav .slide1").css({opacity: 1, left: +position.left, width: width});
+        });
+        $(".nav a").on("mouseover", function(){
+            let position = $(this).parent().position();
+            let width = $(this).parent().width();
+            $(".nav .slide2").css({opacity: 1, left: +position.left, width: width});
+        });
+        $(".nav a").on("mouseout", function(){
+            $(".nav .slide2").css({ opacity: 0 });
+        });
+        let currentWidth = $(".nav").find("li:nth-of-type(1) a").parent("li").width();
+        let current = $("li:nth-of-type(1) a").position();
+        $(".nav .slide1").css({left: +current.left, width: currentWidth});
+    </script>
+</body>
+</html>
