@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing Working Digital Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="https://youtu.be/eoSfzVz9ur0" id="">Amazing Working Digital Clock using Html CSS SVG & Javascript | Simple Javascript Project @ Online Tutorials</a>
+    </header>
+    <div class="container">
+        <div id="time">
+            <div class="circle" style="--clr: #ff2972">
+                <div class="dots hr_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle id="hh" cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div id="hours">00</div>
+            </div>
+            <div class="circle" style="--clr: #fee800">
+                <div class="dots min_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle id="mm" cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div id="minutes">00</div>
+            </div>
+            <div class="circle" style="--clr: #04fc43">
+                <div class="dots sec_dot"></div>
+                <svg>
+                    <circle cx="70" cy="70" r="70"></circle>
+                    <circle id="ss" cx="70" cy="70" r="70"></circle>
+                </svg>
+                <div id="seconds">00</div>
+            </div>
+            <div id="ampm">PM</div>
+        </div>
+    </div>
+    <script>
+        const declOfNum = (number, words) => {  
+            return words[(number % 100 > 4 && number % 100 < 20) ? 2 : [2, 0, 1, 1, 1, 2][(number % 10 < 5) ? Math.abs(number) % 10 : 5]];
+        };
+        const hours = document.querySelector('#hours'),
+            minutes = document.querySelector('#minutes'),
+            seconds = document.querySelector('#seconds'),
+            ampm = document.querySelector('#ampm'),
+            hh = document.querySelector('#hh'),
+            mm = document.querySelector('#mm'),
+            hrDot = document.querySelector('.hr_dot'),
+            minDot = document.querySelector('.min_dot'),
+            secDot = document.querySelector('.sec_dot');
+        
+        const timer = setInterval(() => {
+            let date = new Date();
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let s = date.getSeconds();
+
+            if (h > 12 ){
+                h -= 12;
+                ampm.textContent = 'PM';
+            } else {
+                ampm.textContent = 'AM';
+            }
+
+            hours.innerHTML = `${h.toString().padStart(2, '0')}<br><span>${declOfNum(h,['час', 'часа', 'часов'])}</span>`;
+            minutes.innerHTML = `${m.toString().padStart(2, '0')}<br><span>${declOfNum(m,['минута', 'минуты', 'минут'])}</span>`;
+            seconds.innerHTML = `${s.toString().padStart(2, '0')}<br><span>${declOfNum(s,['секунда', 'секунды', 'секунд'])}</span>`;
+            
+
+            hh.style.strokeDashoffset = 440 - (440 * h) / 12;
+            mm.style.strokeDashoffset = 440 - (440 * m) / 60;
+            ss.style.strokeDashoffset = 440 - (440 * s) / 60;
+
+            hrDot.style.transform = `rotate(${h * 30}deg)`;
+            minDot.style.transform = `rotate(${m * 6}deg)`;
+            secDot.style.transform = `rotate(${s * 6}deg)`;
+            
+        },1000);
+
+    </script>
+</body>
+</html>
