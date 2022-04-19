@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Background For Website Header Using CSS & Vanilla Javascript</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section></section>
+    <div class="hero">Animated Background For Website Header Using CSS & Vanilla Javascript | CSS Animation Effects @ <a
+            href="https://youtu.be/LTMNdqsFh9M">Online Tutorials
+        </a>
+    </div>
+    <script>
+        const colors = [
+            '#2196f3',
+            '#e91e63',
+            '#ffeb3b',
+            '#74ff1d',
+        ];
+        function createSquare(){
+            const section = document.querySelector('section');
+            const square = document.createElement('span');
+
+            const size = Math.random() * 50;
+            square.style.width = 20 + size + 'px';
+            square.style.height = 20 +size + 'px';
+            square.style.left = Math.random() * innerWidth + 'px'; 
+            square.style.top = Math.random() * innerHeight + 'px'; 
+
+            const bg = colors[Math.floor(Math.random() * colors.length)];
+            
+            square.style.backgroundColor = bg;
+
+            section.append(square);
+
+            setTimeout(()=>{
+                square.remove();
+            }, 5000);
+
+        };
+
+        setInterval(createSquare, 150);
+    </script>
+</body>
+
+</html>
