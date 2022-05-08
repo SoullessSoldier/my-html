@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radial Navigation Toggle Menu button</title>
+    <link rel="stylesheet" href="../cdn/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <p>SVG resource: <a href="https://svgsprit.es/">https://svgsprit.es/</a></p>
+        <a href="https://youtu.be/icrEhXdVcUw">Radial Navigation Toggle Menu button Latest Toggle menu
+            @ Online web ustaad</a>
+    </header>
+    <div class="navbar-wrapper">
+        <div class="navbar">
+            <a href="" class="navbar-link">
+                <!-- <img src="./img/home-outline.svg" alt="" class="ion-icon-svg"> -->
+                <svg class="ii">
+                    <use xlink:href="./img/sprite.svg#home-outline"></use>
+                </svg>
+            </a>
+            <a href="" class="navbar-link">
+                <!-- <img src="./img/time-outline.svg" alt="" class="ion-icon-svg"> -->
+                <svg class="ii">
+                    <use xlink:href="./img/sprite.svg#time-outline"></use>
+                </svg>
+            </a>
+            <a href="" class="navbar-link">
+                <!-- <img src="./img/heart-outline.svg" alt="" class="ion-icon-svg"> -->
+                <svg class="ii">
+                    <use xlink:href="./img/sprite.svg#heart-outline"></use>
+                </svg>
+            </a>
+            <a href="" class="navbar-link">
+                <!-- <img src="./img/search-outline.svg" alt="" class="ion-icon-svg"> -->
+                <svg class="ii">
+                    <use xlink:href="./img/sprite.svg#search-outline"></use>
+                </svg>
+            </a>
+            <a href="" class="navbar-link">
+                <!-- <img src="./img/call-outline.svg" alt="" class="ion-icon-svg"> -->
+                <svg class="ii">
+                    <use xlink:href="./img/sprite.svg#call-outline"></use>
+                </svg>
+            </a>
+            <a href="" class="navbar-link">
+                <!-- <img src="./img/videocam-outline.svg" alt="" class="ion-icon-svg"> -->
+                <svg class="ii">
+                    <use xlink:href="./img/sprite.svg#videocam-outline"></use>
+                </svg>
+            </a>
+        </div>
+        <div class="navbar-btn">
+            <!-- <svg class="i ion-icon-svg" xmlns="http://www.w3.org/2000/svg" width="512" height="512"
+                viewBox="0 0 512 512">
+
+                <path d="M448,256c0-106-86-192-192-192S64,150,64,256s86,192,192,192S448,362,448,256Z"
+                    style="stroke-miterlimit:10;stroke-width:32px" />
+                <line x1="256" y1="176" x2="256" y2="336"
+                    style="stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
+                <line x1="336" y1="256" x2="176" y2="256"
+                    style="stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" />
+            </svg> -->
+            <svg class="i">
+                <use xlink:href="./img/circle-cross.svg#add-circle-outline"></use>
+            </svg>
+        </div>
+    </div>
+    <script>
+        wrapper = document.querySelector('.navbar-wrapper');
+        btn = document.querySelector('.navbar-btn');
+        btn.addEventListener('click', (e) => {
+            wrapper.classList.toggle('change');
+
+        });
+    </script>
+</body>
+
+</html>
