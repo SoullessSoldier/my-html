@@ -1,0 +1,224 @@
+@font-face {
+  font-family: Poppins;
+  src: url("../../../cdn/fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("../../../cdn/fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --warning-show-btn-bg-color: #e69100;
+  --warning-show-btn-color: #ffffff;
+  --warning-show-btn-color-dark: #000000;
+  --warning-bg-color: #ffdb9b;
+  --warning-left-border-color: #ffa502;
+  --warning-text-color: #ce8500;
+  --warning-btn-bg-color: #ffd080;
+  --warning-btn-bg-color-hover: #ffc766;
+  --info-show-btn-bg-color: #d6f0ff;
+  --info-show-btn-color: #ffffff;
+  --info-bg-color: #d6f0ff;
+  --info-left-border-color: #6fc9fe;
+  --info-text-color: #42b1e9;
+  --info-btn-bg-color: #9adaff;
+  --info-btn-bg-color-hover: #a9d6f7;
+  --success-show-btn-bg-color: #c2f3d6;
+  --success-show-btn-color: #ffffff;
+  --success-bg-color: #28d26f;
+  --success-left-border-color: #6fc9fe;
+  --success-text-color: #1fad61;
+  --success-btn-bg-color: #91e5b3;
+  --success-btn-bg-color-hover: #99e9b6;
+  --error-show-btn-bg-color: #fce2e3;
+  --error-show-btn-color: #ffffff;
+  --error-bg-color: #fce2e3;
+  --error-left-border-color: #fc4756;
+  --error-text-color: #ff4555;
+  --error-btn-bg-color: #ff96a7;
+  --error-btn-bg-color-hover: #f99ba9;
+}
+
+html {
+  font-family: Poppins, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.control {
+  margin: 150px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  padding: 20px;
+  font-family: inherit;
+  font-weight: 600;
+  letter-spacing: 1px;
+
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  background-color: #5e5e5e;
+}
+
+.btn-warning {
+  color: var(--warning-show-btn-color);
+  background-color: var(--warning-show-btn-bg-color);
+}
+
+.btn-success {
+  color: var(--warning-show-btn-color-dark);
+  background-color: var(--success-show-btn-bg-color);
+}
+
+.btn-info {
+  color: var(--warning-show-btn-color-dark);
+  background-color: var(--info-show-btn-bg-color);
+}
+
+.btn-error {
+  color: var(--warning-show-btn-color-dark);
+  background-color: var(--error-show-btn-bg-color);
+}
+
+.alert {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  display: none;
+  padding: 20px 40px;
+  width: 420px;
+  background-color: var(--warning-bg-color);
+  border-radius: 4px;
+  border-left: 8px solid var(--warning-left-border-color);
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.alert.alert_active {
+  display: flex;
+  animation-name: show_slide;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+  opacity: 1;
+  pointer-events: all;
+}
+
+.alert__icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  font-size: 30px;
+  color: var(--warning-text-color);
+  transform: translateY(-50%);
+}
+
+.alert__msg {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 18px;
+  color: var(--warning-text-color);
+}
+
+.alert__close-btn {
+  padding: 0;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  /* padding: 20px; */
+  background-color: var(--warning-btn-bg-color);
+  transform: translateY(-50%);
+  border-radius: 50%;
+}
+
+.alert__close-btn:hover {
+  background-color: var(--warning-btn-bg-color-hover);
+}
+
+.alert__close-btn-icon {
+  font-size: 22px;
+  line-height: 180%;
+  color: var(--warning-text-color);
+}
+
+.alert__progressbar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 4px;
+  background-color: var(--warning-text-color);
+  animation-name: animate_progressbar_countdown;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes show_slide {
+  0% {
+    transform: translateX(100%);
+  }
+  40% {
+    transform: translateX(-10%);
+  }
+  80% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-10px);
+  }
+}
+
+@keyframes hide_slide {
+  0% {
+    transform: translateX(-10px);
+  }
+  40% {
+    transform: translateX(0%);
+  }
+  80% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes animate_progressbar_countdown {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
